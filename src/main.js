@@ -1,7 +1,7 @@
+import './plugins/element.js'
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import './plugins/element.js'
 // 导入字体图标
 import './assets/fonts/iconfont.css'
 // 导入全局样式表
@@ -14,16 +14,26 @@ import 'quill/dist/quill.core.css' // import styles
 import 'quill/dist/quill.snow.css' // for snow theme
 import 'quill/dist/quill.bubble.css' // for bubble theme
 
+import Nprogress from 'nprogress'
+import 'nprogress/nprogress.css'
+
 import axios from 'axios'
 // 配置请求的跟路径
 axios.defaults.baseURL = 'http://www.violateer.top:12345/api/private/v1/'
 
+// 在request拦截器中，展示进度条
 axios.interceptors.request.use(config => {
-    // console.log(config)
-    config.headers.Authorization = window.sessionStorage.getItem('token')
-        // 在最后必须 return config
+        Nprogress.start()
+        config.headers.Authorization = window.sessionStorage.getItem('token')
+            // 在最后必须 return config
+        return config
+    })
+    // 在response拦截器中， 隐藏进度条
+axios.interceptors.response.use(config => {
+    Nprogress.done()
     return config
 })
+
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false

@@ -1,15 +1,32 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
+// const Login = () => { /* webpackChunkName: "login_home_welcome" */ '../components/Login' }
+// const Home = () => { /* webpackChunkName: "login_home_welcome" */ '../components/Home' }
+// const Welcome = () => { /* webpackChunkName: "login_home_welcome" */ '../components/Welcome' }
 import Login from '../components/Login'
 import Home from '../components/Home'
 import Welcome from '../components/Welcome'
+
+// const Users = () => { /* webpackChunkName: "users_rights_roles" */ '../components/user/Users' }
+// const Rights = () => { /* webpackChunkName: "users_rights_roles" */ '../components/power/Rights' }
+// const Roles = () => { /* webpackChunkName: "users_rights_roles" */ '../components/power/Roles' }
 import Users from '../components/user/Users'
 import Rights from '../components/power/Rights'
 import Roles from '../components/power/Roles'
+
+// const Cate = () => { /* webpackChunkName: "cate_params" */ '../components/goods/Cate' }
+// const Params = () => { /* webpackChunkName: "cate_params" */ '../components/goods/Params' }
 import Cate from '../components/goods/Cate'
 import Params from '../components/goods/Params'
+
+// const GoodsList = () => { /* webpackChunkName: "goodlist_add" */ '../components/goods/List' }
+// const Add = () => { /* webpackChunkName: "goodlist_add" */ '../components/goods/Add' }
 import GoodsList from '../components/goods/List'
 import Add from '../components/goods/Add'
+
+// const Order = () => { /* webpackChunkName: "order_report" */ '../components/order/Order' }
+// const Report = () => { /* webpackChunkName: "order_report" */ '../components/report/Report' }
 import Order from '../components/order/Order'
 import Report from '../components/report/Report'
 
